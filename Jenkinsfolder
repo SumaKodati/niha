@@ -1,20 +1,19 @@
-pipeline
-{
-agent any
-stages {
-stage('one')
-{
-steps {
-sh "mvn clean"
-}
-}
-stage('two')
-steps {
-sh "mvn test"
-}
-}
-stage('three')
-steps {
-sh "mvn package"
-}
+pipeline {
+  agent any
+  stages {
+    stage('one') {
+      steps {
+        sh "mvn clean"
+      }
+    }
+    stage('two') {
+       steps {
+         sh "mvn test"
+       }
+    }
+    stage('three') {
+      steps {
+        sh "mvn package"
+      }
+    }
 }
